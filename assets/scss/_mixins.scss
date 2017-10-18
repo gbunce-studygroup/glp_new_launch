@@ -1,0 +1,185 @@
+// APP MIXINS
+// --------------------------------------------------
+
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+            -ms-border-radius: $radius;
+                border-radius: $radius;
+}
+
+@mixin app-transition($property, $duration, $function){
+    -webkit-transition: $property $duration $function;
+        -moz-transition: $property $duration $function;
+            -ms-transition: $property $duration $function;
+                -o-transition: $property $duration $function;
+                    transition: $property $duration $function;
+}
+
+// ANIMATE.CSS 
+$animate-scss-speed: 1s !default;
+@mixin animate($animation: none, $speed: $animate-scss-speed){
+  @if $animation != none {
+    -webkit-animation-name: $animation;
+       -moz-animation-name: $animation;
+         -o-animation-name: $animation;
+            animation-name: $animation;
+  }
+  -webkit-animation-duration: $speed;
+     -moz-animation-duration: $speed;
+       -o-animation-duration: $speed;
+            animation-duration: $speed;
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+            animation-fill-mode: both;
+}
+
+@mixin cta_shared_styles{
+    border-style: solid;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    @include app-transition(all, .4s, ease);
+    &:active, &:focus{
+        text-decoration: none;
+        outline: 0;
+    }
+}
+
+// Primary CTA
+@mixin primary_cta{
+    @include cta_shared_styles;
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    &:hover{
+        text-decoration: none;
+        background: none;
+        color: #000;
+    }
+}
+
+// Secondary CTA
+@mixin secondary_cta{
+    @include cta_shared_styles;
+    background: none;
+    color: #000;
+    border: 2px solid #000;
+    &:hover{
+        text-decoration: none;
+        background: #000;
+        color: #fff;
+    }
+}
+
+// Form CTA
+@mixin form_cta{
+    @include primary_cta;
+    &:after{
+        font-family: 'Glyphicons Halflings';
+        font-size: 12px;
+        content:"\e080";
+        margin: 0 0 0 7px;
+    }
+}
+
+// COMPONENT MARGIN
+@mixin component_margin{
+    margin: $component_margin; 
+}
+
+// to wrap large tables so they don't break the page on mobile
+@mixin table_wrap{
+    width: 100%;
+    overflow-x: scroll;
+}
+
+// CONTENT BOX, TABS, ACCORDION & BLOG ARTICLE TEXT STYLES
+@mixin content_text_styles{
+    h1, h2, h3, h4, h5, h6, p, ul, ol{
+        margin: 0 0 (nth($component_margin, 3) / 2.5) 0;
+    }
+
+    h1{
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    h2{
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h3{
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    h4{
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    h5{
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    h6{
+        font-size: 12px;
+        line-height: 22px;
+    }
+
+    p, ul, ol{
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    ul, ol{
+        padding: 0 0 0 34px;
+    }
+
+    a{
+        color: $a_colour;
+        text-decoration: none;
+        &:hover, &:active, &:focus{
+            color: $a_colour_hover;
+            text-decoration: underline;
+        }
+    }
+
+    strong, b{}
+
+    small{}
+
+    table{
+        tr{
+            border-bottom: 1px solid $form_colour_s;
+            &:nth-child(odd){
+                background: $form_colour_s;
+            }
+            &:nth-child(even){}
+            th{
+                color: #fff;
+                background: $form_colour;
+            }
+            td{}
+        }
+        &.unstyled{ // Class for unstyled tables
+            tr{
+                border-bottom: 0;
+                &:nth-child(odd){}
+                &:nth-child(even){}
+                th{
+                    color: $main_colour;
+                    background: none;
+                }
+                td{}
+            }
+        }
+    }
+    .table_overflow{
+        @include table_wrap;
+    }
+}

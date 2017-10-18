@@ -1,0 +1,20 @@
+/* FOOTER LINKS */
+.footer_links{ //ul
+	li{
+		a{
+			&:hover, &:active, &:focus{}
+		}
+	}
+}
+
+@media (min-width: $screen-lg-min){
+}
+
+@media (max-width: $screen-md-max){
+}
+
+@media (max-width: $screen-sm-max){
+}
+
+@media (max-width: $screen-xs-max){
+}

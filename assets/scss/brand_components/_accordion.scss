@@ -1,0 +1,36 @@
+/* ACCORDION COMPONENT */
+.accordion{
+    @include component_margin;
+    .panel-group{
+        .panel{
+            h1, h2, h3, h4, h5, h6{}
+            .panel-heading{
+                .panel-title{
+                    h1, h2, h3, h4, h5, h6{
+                        a{
+                            &:after{}
+                            &.collapsed{
+                                &:after{}
+                            }
+                        }
+                    }
+                }
+            }
+            .panel-body{
+                @include content_text_styles;
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-lg-min){
+}
+
+@media (max-width: $screen-md-max){
+}
+
+@media (max-width: $screen-sm-max){
+}
+
+@media (max-width: $screen-xs-max){
+}

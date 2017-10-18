@@ -1,0 +1,43 @@
+// WIDGET COMPONENT
+.widget{
+	@include component_margin;
+	h1, h2, h3, h4, h5, h6{}
+	img{}
+	.button{
+		a{
+			@include secondary_cta;
+		}
+	}
+}
+
+// PULLOUT COMPONENT
+.pullout{
+	@include component_margin;
+	background: red;
+	h1, h2, h3, h4, h5, h6{}
+	img{}
+	.button{
+		a{
+			@include secondary_cta;
+		}
+	}
+	&.option2{
+		background: green;
+	}
+	&.option3{
+		background: blue;
+	}
+}
+
+
+@media (min-width: $screen-lg-min){
+}
+
+@media (max-width: $screen-md-max){
+}
+
+@media (max-width: $screen-sm-max){
+}
+
+@media (max-width: $screen-xs-max){
+}

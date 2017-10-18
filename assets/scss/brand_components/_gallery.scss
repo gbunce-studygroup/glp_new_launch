@@ -1,0 +1,74 @@
+/* GALLERY COMPONENT */
+.gallery{
+	@include component_margin;
+	padding: $gallery_space_left_and_right;
+	h1, h2, h3, h4, h5, h6{}
+	.row{
+		.col-md-6, .col-sm-6, .col-xs-6{
+			padding: $gallery_space_between_images;
+			a{
+				&:after{
+					color: $gallery_icon_colour;
+  					@include app-transition(all, .4s, ease);
+					background: $gallery_image_overlay;
+				}
+				&:hover{
+					&:after{
+						background: $gallery_image_overlay_hover;
+					}
+				}
+			}
+		}
+	}
+	.col-md-6 &, .col-md-5 &, .col-md-4 &, .col-md-3 &, .col-md-2 &{
+		padding: $gallery_space_left_and_right;
+		@include component_margin;
+		.row{
+			.col-md-6, .col-sm-6, .col-xs-6{
+				padding: $gallery_space_between_images;
+			}
+		}
+	}
+	/* GALLERY LIGHTBOX */
+	.modal{
+		.modal-dialog{
+			.modal-content{
+				.modal-body{
+					/* GALLERY CAROUSEL COMPONENT */
+					.carousel{
+						.carousel-inner{
+							.item{
+								.carousel-caption{
+									color: $main_colour;
+								}
+							}
+						}
+						.carousel-control{
+							i{
+								color: $gallery_carousel_arrow_colour;
+								@include app-transition(all, .4s, ease);
+							}
+							&:hover{
+								i{
+									color: $gallery_carousel_arrow_colour_hover;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-lg-min){
+}
+
+@media (max-width: $screen-md-max){
+}
+
+@media (max-width: $screen-sm-max){
+}
+
+@media (max-width: $screen-xs-max){
+}

@@ -1,0 +1,22 @@
+/* MAIN LOGO COMPONENT */
+.logo{
+	margin: 0;
+	img{
+		max-width: none;
+	}
+}
+
+@media (min-width: $screen-lg-min){
+}
+
+@media (max-width: $screen-md-max){
+}
+
+@media (max-width: $screen-sm-max){
+	.logo{
+		margin: 0 0 (nth($header_padding, 1) / 1.5) 0;
+	}
+}
+
+@media (max-width: $screen-xs-max){
+}

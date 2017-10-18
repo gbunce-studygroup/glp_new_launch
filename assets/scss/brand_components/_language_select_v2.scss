@@ -1,0 +1,32 @@
+/* LANGUAGE LINKS COMPONENT */
+.language_links_v2{ //ul
+	margin-bottom: (nth($header_padding, 1));
+	li{ //.dropdown
+		a{
+			color: $main_colour;
+			font-size: 12px;
+			&:hover, &:active, &:focus{
+				color: $main_colour;
+			}
+		}
+		ul{
+			li{
+				a, a:hover{
+					color: $main_colour;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-lg-min){
+}
+
+@media (max-width: $screen-md-max){
+}
+
+@media (max-width: $screen-sm-max){
+}
+
+@media (max-width: $screen-xs-max){
+}

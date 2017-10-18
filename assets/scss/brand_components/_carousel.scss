@@ -1,0 +1,41 @@
+/* CAROUSEL COMPONENT */
+.carousel{
+	@include component_margin;
+	.carousel-indicators{
+		li{
+			margin: 2px;
+			&.active{
+			}
+		}
+	}
+	.carousel-inner{
+		.item{
+			&.active{}
+			.carousel-caption{
+				background: rgba($main_colour, 0.7);
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-lg-min){
+}
+
+@media (max-width: $screen-md-max){
+}
+
+@media (max-width: $screen-sm-max){
+	.carousel{
+		@include component_margin;
+		.carousel-inner{
+			.item{
+				.carousel-caption{
+					background: rgba($main_colour, 1);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max){
+}
